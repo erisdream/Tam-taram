@@ -51,4 +51,3 @@ gulp.task('watch', () => {
 
 gulp.task('default', ['styles', 'html', 'img', 'js', 'livereload', 'watch']);
 gulp.task('prod', ['styles', 'html', 'img', 'js']);
-
