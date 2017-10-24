@@ -36,9 +36,11 @@ gulp.task('html', () => {
         .pipe(gulp.dest('./dist'));
 });
 
+
 gulp.watch('src/less/**/*.less', ['styles']);
 gulp.watch('src/**/*.html', ['html']);
 gulp.watch('src/img/**/*.*', ['img']);
 gulp.watch('src/js/**/*.*', ['js']);
 
 gulp.task('default', ['styles', 'html', 'img', 'js']);
+gulp.task('prod', ['styles', 'html', 'img', 'js']);
