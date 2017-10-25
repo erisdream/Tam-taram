@@ -41,13 +41,19 @@ gulp.task('html', () => {
         .pipe(gulp.dest('./dist'));
 });
 
+gulp.task('fonts', () => {
+    gulp.src('src/fonts/**/*.*')
+        .pipe(gulp.dest('./dist/fonts'));
+});
+
 // Отслеживание изменений в файлах, нужно только при локальной разработке
 gulp.task('watch', () => {
     gulp.watch('src/less/**/*.less', ['styles']);
     gulp.watch('src/**/*.html', ['html']);
     gulp.watch('src/img/**/*.*', ['img']);
     gulp.watch('src/js/**/*.*', ['js']);
+    gulp.watch('src/fonts/**/*.*', ['fonts']);
 });
 
-gulp.task('default', ['styles', 'html', 'img', 'js', 'livereload', 'watch']);
-gulp.task('prod', ['styles', 'html', 'img', 'js']);
+gulp.task('default', ['styles', 'html', 'img', 'js', 'livereload', 'watch', 'fonts']);
+gulp.task('prod', ['styles', 'html', 'img', 'js', 'fonts']);
