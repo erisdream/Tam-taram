@@ -29,7 +29,7 @@ gulp.task('styles', () => {
         .pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('img', () => {
+gulp.task("img", () => {
     gulp.src('src/img/**/*.*')
         .pipe(gulp.dest('./dist/img'));
 });
@@ -55,7 +55,7 @@ gulp.task('fonts', () => {
 gulp.task('watch', () => {
     gulp.watch('src/less/**/*.less', ['styles']);
     gulp.watch('src/**/*.html', ['html']);
-    gulp.watch('src/**/*.ejs', ['html'])
+    gulp.watch('src/**/*.ejs', ['html']);
     gulp.watch('src/img/**/*.*', ['img']);
     gulp.watch('src/js/**/*.*', ['js']);
     gulp.watch('src/fonts/**/*.*', ['fonts']);

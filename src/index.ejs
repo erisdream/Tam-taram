@@ -19,6 +19,14 @@
         <div class="page-header__menu">
             <div class="container">
                 <nav class="main-nav">
+                    <ul class="menu__list">
+                        <% const menu = ['Tops', 'Blouses', 'T-shirts', 'Boots', 'Hats']; %>
+                        for(let item of menu) { %>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link"><%= item %></a>
+                        </li>
+                        <% } %>
+                    </ul>
                     <ul class="main-nav__list site-list">
                         <li class="site-list__item">
                             LISP
@@ -165,6 +173,8 @@
         </div>
     </footer>
 
+
+    <script src="ejs.js"></script
     <script src="js/checkColor.js"></script>
 
 </body>

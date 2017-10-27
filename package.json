@@ -4,13 +4,11 @@
   "description": "Simple project template with LESS, Autoprefixer and livereload.",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp",
     "dev": "gulp",
     "prod": "gulp prod",
     "format": "prettier --single-quote --no-semi --write **/*.js",
-    "install": "node ./bin/install.js",
-    "uninstall": "node ./bin/uninstall.js",
     "lint": "eslint src && stylelint src/less/*.less",
     "precommit": "npm run lint"
   },
@@ -18,6 +16,7 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.18.11",
+    "ejs": "^2.5.7",
     "eslint": "^3.19.0",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-ejs": "^3.0.1",
