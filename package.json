@@ -26,6 +26,7 @@
     "stylelint": "^7.13.0"
   },
   "dependencies": {
+    "ejs-lint": "^0.3.0",
     "gulp": "^3.9.1",
     "gulp-less": "^3.3.0",
     "install": "^0.10.1",

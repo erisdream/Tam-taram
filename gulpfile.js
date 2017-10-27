@@ -29,7 +29,7 @@ gulp.task('styles', () => {
         .pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task("img", () => {
+gulp.task('img', () => {
     gulp.src('src/img/**/*.*')
         .pipe(gulp.dest('./dist/img'));
 });
