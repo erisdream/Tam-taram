@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "start": "gulp",
+    "dev": "gulp",
+    "prod": "gulp prod",
     "format": "prettier --single-quote --no-semi --write **/*.js",
     "install": "node ./bin/install.js",
     "uninstall": "node ./bin/uninstall.js",

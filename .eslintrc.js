@@ -28,7 +28,7 @@ module.exports = {
             'error',
             'unix'
         ],
-        'quotes': [
+        "quotes": [
             'error',
             'single'
         ],
