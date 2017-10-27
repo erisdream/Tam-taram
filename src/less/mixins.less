@@ -16,16 +16,16 @@
     max-width: 1400px;
     padding: 0 10px;
     margin: 0 auto;
-    @media @tablet-widths {}
 }
 
 .clearfix () {
-    &:after,
-    &:before {
+    &::after,
+    &::before {
         content: "";
         display: table;
     }
-    &:after {
+
+    &::after {
         clear: both;
     }
 }

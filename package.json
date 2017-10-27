@@ -7,7 +7,9 @@
     "test": "jest",
     "format": "prettier --single-quote --no-semi --write **/*.js",
     "install": "node ./bin/install.js",
-    "uninstall": "node ./bin/uninstall.js"
+    "uninstall": "node ./bin/uninstall.js",
+    "lint": "eslint src && stylelint src/less/*.less",
+    "precommit": "npm run lint"
   },
   "author": "Evgeniy Nedilko",
   "license": "ISC",
