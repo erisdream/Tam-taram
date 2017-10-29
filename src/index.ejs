@@ -62,21 +62,33 @@
                 <form class="page-main__good-form" action="#" method="post">
                     <fieldset class="page-main__good-parameters">
                         <p class="page-main__good-parameter-title">Размер</p>
-                        <input class="page-main__good-radio page-main__good-radio--size" type="radio" name="size" value="S" id="radio1">
-                        <label for="radio1">S</label>
-                        <input class="page-main__good-radio page-main__good-radio--size" type="radio" checked name="size" value="M" id="radio2">
-                        <label for="radio2">M</label>
-                        <input class="page-main__good-radio page-main__good-radio--size" type="radio" name="size" value="L" id="radio3">
-                        <label for="radio3">L</label>
+
+                        <% const sizeButton = [
+                            {size: "s", text: "S"},
+                            {size: "m", text: "M"},
+                            {size: "l", text: "L"}
+                        ]
+                        %>
+                        <% sizeButton.forEach(function(size, index) { %>
+                        <input class="page-main__good-radio page-main__good-radio--size-<%= size.size; %>" type="radio" name="size" value="<%= size.size; %>" id="size-radio-<%= size.size; %>">
+                        <label for="size-radio-<%= size.size; %>"><%= size.text; %></label>
+                        <% }); %>
+
                     </fieldset>
                     <fieldset class="page-main__good-parameters">
                         <p class="page-main__good-parameter-title">Цвет</p>
-                        <input class="page-main__good-radio page-main__good-radio--color-white" type="radio" checked name="color" value="white" id="radio4">
-                        <label for="radio4">W</label>
-                        <input class="page-main__good-radio page-main__good-radio--color-yellow" type="radio" name="color" value="yellow" id="radio5">
-                        <label for="radio5">Y</label>
-                        <input class="page-main__good-radio page-main__good-radio--color-green" type="radio" name="color" value="green" id="radio6">
-                        <label for="radio6">G</label>
+
+                        <% const colorButton = [
+                            {color: "white", text: "White"},
+                            {color: "yellow", text: "Yellow"},
+                            {color: "green", text: "Green"}
+                            ]
+                        %>
+                        <% colorButton.forEach(function(color, index) { %>
+                        <input class="page-main__good-radio page-main__good-radio--color-<%= color.color; %>" type="radio" name="color" value="<%= color.color; %>" id="color-radio-<%= color.color; %>">
+                        <label for="color-radio-<%= color.color; %>"><%= color.text; %></label>
+                        <% }); %>
+
                     </fieldset>
                     <input class="button page-main__button-buy" type="submit" value="Купить">
                     <input class="add-to-cart" type="submit" value="Отложить на потом">
@@ -90,72 +102,79 @@
                 <section class="page-footer__section">
                     <p class="page-footer__section-title">Сервис и поддержка</p>
                     <ul class="page-footer__list">
+
+                        <% const footerlistServices = [
+                            {text: "Как сделать заказ", link: "#"},
+                            {text: "Возврат товара", link: "#"},
+                            {text: "Публичная оферта", link: "#"},
+                            {text: "Доставка", link: "#"},
+                            {text: "Способы оплаты", link: "#"},
+                            {text: "Правила продажи", link: "#"},
+                            {text: "Возврат денежных средств", link: "#"},
+                            {text: "Вопросы и ответы", link: "#"}
+                            ]
+                        %>
+                        <% footerlistServices.forEach(function(item, index) { %>
                         <li class="page-footer__list-item">
-                            <a class="page-footer__list-item-link" href="#">Как сделать заказ</a>
+                            <a class="page-footer__list-item-link" href="<%= item.link; %>"><%= item.text; %></a>
                         </li>
-                        <li class="page-footer__list-item">
-                            <a class="page-footer__list-item-link" href="#">Возврат товара</a>
-                        </li>
-                        <li class="page-footer__list-item">
-                            <a class="page-footer__list-item-link" href="#">Публичная оферта</a>
-                        </li>
-                        <li class="page-footer__list-item">
-                            <a class="page-footer__list-item-link" href="#">Доставка</a>
-                        </li>
-                        <li class="page-footer__list-item">
-                            <a class="page-footer__list-item-link" href="#">Способы оплаты</a>
-                        </li>
-                        <li class="page-footer__list-item">
-                            <a class="page-footer__list-item-link" href="#">Правила продажи</a>
-                        </li>
-                        <li class="page-footer__list-item">
-                            <a class="page-footer__list-item-link" href="#">Возврат денежных средств</a>
-                        </li>
-                        <li class="page-footer__list-item">
-                            <a class="page-footer__list-item-link" href="#">Вопросы и ответы</a>
-                        </li>
+
+                        <% }); %>
                     </ul>
                 </section>
                 <section class="page-footer__section">
                     <p class="page-footer__section-title">О компании</p>
                     <ul class="page-footer__list">
+
+
+                        <% const footerlistAbout = [
+                            {text: "О нас", link: "#"},
+                            {text: "Контакты", link: "#"},
+                            {text: "Вакансии", link: "#"},
+                            {text: "Партнерам", link: "#"},
+                            {text: "Сертификаты", link: "#"},
+                            {text: "Преимущества", link: "#"},
+                            {text: "Наши скидки", link: "#"}
+                            ]
+                        %>
+                        <% footerlistAbout.forEach(function(item, index) { %>
                         <li class="page-footer__list-item">
-                            <a class="page-footer__list-item-link" href="#">О нас</a>
+                            <a class="page-footer__list-item-link" href="<%= item.link; %>"><%= item.text; %></a>
                         </li>
-                        <li class="page-footer__list-item">
-                            <a class="page-footer__list-item-link" href="#">Контакты</a>
-                        </li>
-                        <li class="page-footer__list-item">
-                            <a class="page-footer__list-item-link" href="#">Вакансии</a>
-                        </li>
-                        <li class="page-footer__list-item">
-                            <a class="page-footer__list-item-link" href="#">Партнерам</a>
-                        </li>
-                        <li class="page-footer__list-item">
-                            <a class="page-footer__list-item-link" href="#">Сертификаты</a>
-                        </li>
-                        <li class="page-footer__list-item">
-                            <a class="page-footer__list-item-link" href="#">Преимущества</a>
-                        </li>
-                        <li class="page-footer__list-item">
-                            <a class="page-footer__list-item-link" href="#">Наши скидки</a>
-                        </li>
+
+                        <% }); %>
+
                     </ul>
                 </section>
                 <section class="page-footer__features">
                     <ul class="page-footer__features-list">
-                        <li class="page-footer__features-list-item page-footer__features-list-item--delivery">бесплатная доставка от 4000&#8381;
+                        <% const footerlistFeatures = [
+                            {feauture: "delivery", text: "бесплатная доставка от 4000&#8381;"},
+                            {feauture: "probe", text: "пробники в подарок при каждой покупке"},
+                            {feauture: "actions", text: "акции и подарки за покупку"},
+                        ]
+                        %>
+                        <% footerlistFeatures.forEach(function(item, index) { %>
+                        <li class="page-footer__features-list-item page-footer__features-list-item--<%= item.feauture; %>">
+                            <%= item.text; %>
                         </li>
-                        <li class="page-footer__features-list-item page-footer__features-list-item--probe">пробники в подарок при каждой покупке
-                        </li>
-                        <li class="page-footer__features-list-item page-footer__features-list-item--actions">акции и подарки за покупку
-                        </li>
+                        <% }); %>
                     </ul>
                 </section>
                 <section class="page-footer__social-links social-links">
-                    <a href="#" class="social-links__social-button social-links__social-button--facebook">Fb</a>
-                    <a href="#" class="social-links__social-button social-links__social-button--twitter">Twit</a>
-                    <a href="#" class="social-links__social-button social-links__social-button--instagram">Inst</a>
+
+                    <% const footerSocialLinks = [
+                        {SocialNetwork: "facebook", link: "#", text: "Fb"},
+                        {SocialNetwork: "twitter", link: "#", text: "Twit"},
+                        {SocialNetwork: "instagram", link: "#", text: "Inst"},
+                    ]
+                    %>
+                    <% footerSocialLinks.forEach(function(item, index) { %>
+                    <a href="<%= item.link; %>" class="social-links__social-button social-links__social-button--<%= item.SocialNetwork; %>">
+                        <%= item.text; %>
+                    </a>
+                    <% }); %>
+
                 </section>
             </div>
             <div class="page-footer__bottom">

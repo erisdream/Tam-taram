@@ -1,21 +1,16 @@
 'use strict';
 const image = document.getElementById('image');
-const buttonWhite = document.getElementById('radio4');
-const buttonYellow = document.getElementById('radio5');
-const buttonGreen = document.getElementById('radio6');
+document.addEventListener ('click', function (event) {
+    if(event.target.classList.contains('page-main__good-radio--color-white')) {
+        image.src = 'img/tshirt_white.jpg';
+    }
 
-function colorWhite() {
-    image.src = 'img/tshirt_white.jpg';
-}
+    if(event.target.classList.contains('page-main__good-radio--color-yellow')) {
+        image.src = 'img/tshirt_yellow.jpg';
+    }
 
-function colorYellow() {
-    image.src = 'img/tshirt_yellow.jpg';
-}
+    if(event.target.classList.contains('page-main__good-radio--color-green')) {
+        image.src = 'img/tshirt_green.jpg';
+    }
 
-function colorGreen() {
-    image.src = 'img/tshirt_green.jpg';
-}
-
-buttonWhite.addEventListener('click', colorWhite, false);
-buttonYellow.addEventListener('click', colorYellow, false);
-buttonGreen.addEventListener('click', colorGreen, false);
+});
