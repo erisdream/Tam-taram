@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>7h3 5h0p</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <header class="page-header">
+        <div class="page-header__top">
+            <a href="index.html" class="page-header__page-name">7h3 5h0p</a>
+            <a href="http://oggettoweb.ru/" class="page-header__oggetto-link"><img src="img/oggetto_logo.svg" width="50px" height="50px" alt="oggetto"></a>
+            <a href="tel:+78122128506" class="page-header__phone grebenshikovs-phone-number">+7 (812) 2&bull;12&bull;85&bull;06</a>
+        </div>
+        <div class="page-header__menu">
+            <div class="container">
+                <nav class="main-nav">
+                    <ul class="main-nav__list site-list">
+
+                        <% const siteList = [
+                            {text: "LISP", link: "#"},
+                            {text: "OCaml", link: "#"},
+                            {text: "JavaScript", link: "#"},
+                            {text: "Python", link: "#"},
+                            {text: "PHP", link: "#"}
+                        ]
+                        %>
+                        <% siteList.forEach(function(item, index) { %>
+                        <li class="site-list__item">
+                            <% if(index == 0) { %>
+
+                            <%= item.text; %>
+                            <% } %>
+                            <% if(index > 0) { %>
+
+                            <a href="<%= item.link; %>"><%= item.text; %></a>
+                            <% } %>
+                        </li>
+
+                        <% }); %>
+
+
+
+                    </ul>
+                </nav>
+                <form class="page-header__search search" action="#" method="post">
+                    <label>
+              <input class="search__search-field" type="search" size="32" name="form-user-info">
+            </label>
+                    <input class="search__search-button" type="submit" value="Искать">
+                </form>
+            </div>
+        </div>
+    </header>
+    <main class="page-main">
+        <ul class="page-main__breadcrumbs">
+
+            <% const breadcrumbs = [
+                {text: "LISP", link: "#"},
+                {text: "Одежда", link: "#"},
+                {text: "Футболки", link: "#"}
+            ]
+            %>
+
+
+
+            <% breadcrumbs.forEach(function(crumb, index) { %>
+            <li class="breadcrumbs__item">
+                <% if(index == breadcrumbs.length - 1) { %>
+
+                <%= crumb.text; %>
+                <% } %>
+                <% if(index < (breadcrumbs.length - 1)) { %>
+                <a href="#" class="page-main__breadcrumbs-link"><%= crumb.text; %></a>
+
+                <span class="breadcrumb__separator">/&nbsp;</span>
+                <% } %>
+            </li>
+            <% }); %>
+        </ul>
+        <section class="page-main__good">
+            <figure class="page-main__good-figure">
+                <img class="page-main__good-img" src="img/tshirt_white.jpg" alt="picture" width="698" height="698" id="image">
+            </figure>
+            <div class="page-main__good-info">
+                <h1 class="page-main__good-title">Футболка Alien technology</h1>
+                <p class="page-main__good-description">Состав: 100% хлопок, динамическая типизация, польская нотация. Производство: Россия.</p>
+                <p class="page-main__good-price">1500&#8381;</p>
+                <form class="page-main__good-form" action="#" method="post">
+                    <fieldset class="page-main__good-parameters">
+                        <p class="page-main__good-parameter-title">Размер</p>
+
+                        <% const sizeButton = [
+                            {size: "s", text: "S"},
+                            {size: "m", text: "M"},
+                            {size: "l", text: "L"}
+                        ]
+                        %>
+                        <% sizeButton.forEach(function(size, index) { %>
+                        <input class="page-main__good-radio page-main__good-radio--size-<%= size.size; %>" type="radio" name="size" value="<%= size.size; %>" id="size-radio-<%= size.size; %>">
+                        <label for="size-radio-<%= size.size; %>"><%= size.text; %></label>
+                        <% }); %>
+
+                    </fieldset>
+                    <fieldset class="page-main__good-parameters">
+                        <p class="page-main__good-parameter-title">Цвет</p>
+
+                        <% const colorButton = [
+                            {color: "white", text: "W"},
+                            {color: "yellow", text: "Y"},
+                            {color: "green", text: "G"}
+                            ]
+                        %>
+                        <% colorButton.forEach(function(color, index) { %>
+                        <input class="page-main__good-radio page-main__good-radio--color-<%= color.color; %>" type="radio" name="color" value="<%= color.color; %>" id="color-radio-<%= color.color; %>">
+                        <label for="color-radio-<%= color.color; %>"><%= color.text; %></label>
+                        <% }); %>
+
+                    </fieldset>
+                    <input class="button page-main__button-buy" type="submit" value="Купить">
+                    <input class="add-to-cart" type="submit" value="Отложить на потом">
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="page-footer__top">
+                <section class="page-footer__section">
+                    <p class="page-footer__section-title">Сервис и поддержка</p>
+                    <ul class="page-footer__list">
+
+                        <% const footerlistServices = [
+                            {text: "Как сделать заказ", link: "#"},
+                            {text: "Возврат товара", link: "#"},
+                            {text: "Публичная оферта", link: "#"},
+                            {text: "Доставка", link: "#"},
+                            {text: "Способы оплаты", link: "#"},
+                            {text: "Правила продажи", link: "#"},
+                            {text: "Возврат денежных средств", link: "#"},
+                            {text: "Вопросы и ответы", link: "#"}
+                            ]
+                        %>
+                        <% footerlistServices.forEach(function(item, index) { %>
+                        <li class="page-footer__list-item">
+                            <a class="page-footer__list-item-link" href="<%= item.link; %>"><%= item.text; %></a>
+                        </li>
+
+                        <% }); %>
+                    </ul>
+                </section>
+                <section class="page-footer__section">
+                    <p class="page-footer__section-title">О компании</p>
+                    <ul class="page-footer__list">
+
+
+                        <% const footerlistAbout = [
+                            {text: "О нас", link: "#"},
+                            {text: "Контакты", link: "#"},
+                            {text: "Вакансии", link: "#"},
+                            {text: "Партнерам", link: "#"},
+                            {text: "Сертификаты", link: "#"},
+                            {text: "Преимущества", link: "#"},
+                            {text: "Наши скидки", link: "#"}
+                            ]
+                        %>
+                        <% footerlistAbout.forEach(function(item, index) { %>
+                        <li class="page-footer__list-item">
+                            <a class="page-footer__list-item-link" href="<%= item.link; %>"><%= item.text; %></a>
+                        </li>
+
+                        <% }); %>
+
+                    </ul>
+                </section>
+                <section class="page-footer__features">
+                    <ul class="page-footer__features-list">
+                        <% const footerlistFeatures = [
+                            {feauture: "delivery", text: "бесплатная доставка от 4000Р"},
+                            {feauture: "probe", text: "пробники в подарок при каждой покупке"},
+                            {feauture: "actions", text: "акции и подарки за покупку"},
+                        ]
+                        %>
+                        <% footerlistFeatures.forEach(function(item, index) { %>
+                        <li class="page-footer__features-list-item page-footer__features-list-item--<%= item.feauture; %>">
+                            <%= item.text; %>
+                        </li>
+                        <% }); %>
+                    </ul>
+                </section>
+                <section class="page-footer__social-links social-links">
+
+                    <% const footerSocialLinks = [
+                        {SocialNetwork: "facebook", link: "#", text: "Fb"},
+                        {SocialNetwork: "twitter", link: "#", text: "Twit"},
+                        {SocialNetwork: "instagram", link: "#", text: "Inst"},
+                    ]
+                    %>
+                    <% footerSocialLinks.forEach(function(item, index) { %>
+                    <a href="<%= item.link; %>" class="social-links__social-button social-links__social-button--<%= item.SocialNetwork; %>">
+                        <%= item.text; %>
+                    </a>
+                    <% }); %>
+
+                </section>
+            </div>
+            <div class="page-footer__bottom">
+                <p class="page-footer__copyright">2005-2017 &copy; 7h35h0p.ru - модный интернет-магазин одежды, обуви и аксессуаров. <br> Все права защищены. Доставка по всей России!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/checkColor.js"></script>
+
+</body>
+
+</html>
