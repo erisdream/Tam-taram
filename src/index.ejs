@@ -14,25 +14,42 @@
         <div class="page-header__top">
             <a href="index.html" class="page-header__page-name">7h3 5h0p</a>
             <a href="http://oggettoweb.ru/" class="page-header__oggetto-link"><img src="img/oggetto_logo.svg" width="50px" height="50px" alt="oggetto"></a>
-            <a href="tel:+78122128506" class="page-header__phone grebenshikovs-phone-number">+7(812)2-12-85-06</a>
+            <a href="tel:+78122128506" class="page-header__phone grebenshikovs-phone-number">+7 (812) 2&bull;12&bull;85&bull;06</a>
         </div>
         <div class="page-header__menu">
             <div class="container">
                 <nav class="main-nav">
                     <ul class="main-nav__list site-list">
-                        <% const siteList = ['LISP', 'OCaml', 'JavaScript', 'Python', 'PHP'] %>
+
+                        <% const siteList = [
+                            {text: "LISP", link: "#"},
+                            {text: "OCaml", link: "#"},
+                            {text: "JavaScript", link: "#"},
+                            {text: "Python", link: "#"},
+                            {text: "PHP", link: "#"}
+                        ]
+                        %>
                         <% siteList.forEach(function(item, index) { %>
                         <li class="site-list__item">
-                            <a href="#"><%= item; %></a>
-                            <% if(index < (siteList.length - 1)) { %>
+                            <% if(index == 0) { %>
+
+                            <%= item.text; %>
+                            <% } %>
+                            <% if(index > 0) { %>
+
+                            <a href="<%= item.link; %>"><%= item.text; %></a>
                             <% } %>
                         </li>
+
                         <% }); %>
+
+
+
                     </ul>
                 </nav>
                 <form class="page-header__search search" action="#" method="post">
                     <label>
-              <input class="search__search-field" type="search" size="26" name="form-user-info">
+              <input class="search__search-field" type="search" size="32" name="form-user-info">
             </label>
                     <input class="search__search-button" type="submit" value="Искать">
                 </form>
@@ -41,12 +58,26 @@
     </header>
     <main class="page-main">
         <ul class="page-main__breadcrumbs">
-            <% const breadcrumbs = ['LISP', 'Одежда', 'Футболки'] %>
+
+            <% const breadcrumbs = [
+                {text: "LISP", link: "#"},
+                {text: "Одежда", link: "#"},
+                {text: "Футболки", link: "#"}
+            ]
+            %>
+
+
+
             <% breadcrumbs.forEach(function(crumb, index) { %>
             <li class="breadcrumbs__item">
-                <a href="#" class="page-main__breadcrumbs-link"><%= crumb; %></a>
+                <% if(index == breadcrumbs.length - 1) { %>
+
+                <%= crumb.text; %>
+                <% } %>
                 <% if(index < (breadcrumbs.length - 1)) { %>
-                <span class="breadcrumb__separator">/</span>
+                <a href="#" class="page-main__breadcrumbs-link"><%= crumb.text; %></a>
+
+                <span class="breadcrumb__separator">/&nbsp;</span>
                 <% } %>
             </li>
             <% }); %>
@@ -79,9 +110,9 @@
                         <p class="page-main__good-parameter-title">Цвет</p>
 
                         <% const colorButton = [
-                            {color: "white", text: "White"},
-                            {color: "yellow", text: "Yellow"},
-                            {color: "green", text: "Green"}
+                            {color: "white", text: "W"},
+                            {color: "yellow", text: "Y"},
+                            {color: "green", text: "G"}
                             ]
                         %>
                         <% colorButton.forEach(function(color, index) { %>
@@ -149,7 +180,7 @@
                 <section class="page-footer__features">
                     <ul class="page-footer__features-list">
                         <% const footerlistFeatures = [
-                            {feauture: "delivery", text: "бесплатная доставка от 4000&#8381;"},
+                            {feauture: "delivery", text: "бесплатная доставка от 4000Р"},
                             {feauture: "probe", text: "пробники в подарок при каждой покупке"},
                             {feauture: "actions", text: "акции и подарки за покупку"},
                         ]
