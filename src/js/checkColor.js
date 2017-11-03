@@ -1,7 +1,7 @@
 'use strict';
 const image = document.getElementById('productImage');
 document.addEventListener ('click', function (event) {
-   
+
     if(event.target.getAttribute('value') == 'white') {
         image.src = 'img/tshirt_white.jpg';
     }

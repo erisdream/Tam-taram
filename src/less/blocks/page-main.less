@@ -42,12 +42,13 @@
     &__product-radio:not(checked) + label {
         display: inline-block;
         position: relative;
-        padding: 10px 0 2px 18px;
         margin-bottom: 1px;
         cursor: pointer;
         border: 1px solid @black;
-        height: 49px;
-        width: 46px;
+        height: 62px;
+        width: 62px;
+        line-height: 62px;
+        text-align: center;
     }
 
     &__product-radio--color-white:not(checked) + label {
@@ -68,8 +69,10 @@
     &__product-radio:checked + label {
         border: 3px solid @red;
         margin-top: -2px;
-        height: 46px;
-        width: 43px;
+        height: 58px;
+        width: 58px;
+        line-height: 58px;
+        text-align: center;
     }
 
     &__button-buy {
