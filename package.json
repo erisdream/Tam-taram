@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp",
-    "dev": "gulp",
-    "prod": "gulp prod",
+    "start": "set NODE_ENV=development&&gulp",
+    "dev": "set NODE_ENV=development&&gulp",
+    "prod": "set NODE_ENV=production&&gulp prod",
     "format": "prettier --single-quote --no-semi --write **/*.js",
     "lint": "eslint src && stylelint src/less/*.less",
     "precommit": "npm run lint"
@@ -29,6 +29,7 @@
   "dependencies": {
     "ejs-lint": "^0.3.0",
     "gulp": "^3.9.1",
+    "gulp-if": "^2.0.2",
     "gulp-less": "^3.3.0",
     "gulp-sourcemaps": "^2.6.1",
     "imagemin-pngquant": "^5.0.1",

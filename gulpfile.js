@@ -7,6 +7,8 @@ const rename       = require('gulp-rename');
 const ejs          = require('gulp-ejs');
 const gutil        = require('gulp-util');
 const imagemin = require('gulp-imagemin');
+const gulpIf = require('gulp-if');
+const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
 // Автоперезагрузка при изменении файлов в папке `dist`:
 // Принцип: меняем файлы в `/src`, они обрабатываются и переносятся в `dist` и срабатывает автоперезагрузка.
@@ -55,9 +57,10 @@ gulp.task('fonts', () => {
         .pipe(gulp.dest('./dist/fonts'));
 });
 
-gulp.task('imagemin', () =>  {
+gulp.task('img', () => {
     gulp.src('src/img/**/*.*')
-        .pipe(imagemin([
+        .pipe(gulpIf(!isDevelopment,
+    imagemin([
             imagemin.optipng({optimizationLevel: 5}),
             imagemin.svgo({
                 plugins: [
@@ -65,10 +68,10 @@ gulp.task('imagemin', () =>  {
                     {cleanupIDs: false}
                 ]
             })
-        ]))
+        ])
+    ))
         .pipe(gulp.dest('./dist/img'));
 });
-
 
 // Отслеживание изменений в файлах, нужно только при локальной разработке
 gulp.task('watch', () => {
@@ -81,5 +84,5 @@ gulp.task('watch', () => {
     gulp.watch('src/img/**/*.*', ['imagemin']);
 });
 
-gulp.task('default', ['styles', 'html', 'js', 'livereload', 'watch', 'fonts']);
-gulp.task('prod', ['styles', 'html', 'js', 'fonts', 'imagemin']);
+gulp.task('default', ['styles', 'html', 'js', 'livereload', 'watch', 'fonts',  'img']);
+gulp.task('prod', ['styles', 'html', 'js', 'fonts', 'img']);
