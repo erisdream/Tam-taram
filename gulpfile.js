@@ -8,6 +8,8 @@ const ejs          = require('gulp-ejs');
 const gutil        = require('gulp-util');
 const imagemin = require('gulp-imagemin');
 const gulpIf = require('gulp-if');
+const csso = require('gulp-csso');
+const minify = require('gulp-minify');
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
 // Автоперезагрузка при изменении файлов в папке `dist`:
@@ -26,22 +28,58 @@ gulp.task('livereload', () => {
     });
 });
 
+//gulp.task('styles', () => {
+//    gulp.src('src/less/main.less')
+//        .pipe(sourcemaps.init())
+//        .pipe(less())
+//        .pipe(autoprefixer())
+//        .pipe(sourcemaps.write())
+//        .pipe(gulp.dest('./dist/css'));
+//});
+
 gulp.task('styles', () => {
     gulp.src('src/less/main.less')
         .pipe(sourcemaps.init())
         .pipe(less())
         .pipe(autoprefixer())
         .pipe(sourcemaps.write())
+        .pipe(gulpIf(!isDevelopment,
+            csso()
+    ))
         .pipe(gulp.dest('./dist/css'));
 });
+
 
 //gulp.task('img', () => {
 //    gulp.src('src/img/**/*.*')
 //        .pipe(gulp.dest('./dist/img'));
 //});
 
+//gulp.task('compress', function() {
+//   gulp.src('lib/*.js')
+//        .pipe(minify({
+//            ext:{
+//                src:'-debug.js',
+//                min:'.js'
+//            },
+//            exclude: ['tasks'],
+//            ignoreFiles: ['.combo.js', '-min.js']
+//        }))
+//        .pipe(gulp.dest('dist'))
+//});
+
 gulp.task('js', () => {
     gulp.src('src/js/**/*.*')
+        .pipe(gulpIf(!isDevelopment,
+            minify({
+                ext:{
+                    src:'-debug.js',
+                    min:'.js'
+                },
+                exclude: ['tasks'],
+                ignoreFiles: ['.combo.js', '-min.js']
+            })
+        ))
         .pipe(gulp.dest('./dist/js'));
 });
 
