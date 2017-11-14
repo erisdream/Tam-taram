@@ -1,219 +1,353 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>7h3 5h0p</title>
+    <title>TAM-TARAM</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.1/jquery.fancybox.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
 </head>
-
 <body>
-    <header class="page-header">
-        <div class="page-header__top">
-            <a href="/" class="page-header__page-name">7h3 5h0p</a>
-            <a href="http://oggettoweb.ru/" class="page-header__oggetto-link oggetto-link"><%-include('img/oggetto_logo.svg')%></a>
-            <a href="tel:+78122128506" class="page-header__phone">+7 (812) 2&bull;12&bull;85&bull;06</a>
-        </div>
-        <div class="page-header__menu">
-            <div class="container">
-                <nav class="main-nav">
-                    <ul class="main-nav__list site-list">
+<header class="page-header">
 
-                        <% const siteList = [
-                            {text: "LISP", link: "#"},
-                            {text: "OCaml", link: "#"},
-                            {text: "JavaScript", link: "#"},
-                            {text: "Python", link: "#"},
-                            {text: "PHP", link: "#"}
+    <nav class="main-nav main-nav--closed main-nav--nojs">
+        <button class="main-nav__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
+        <div class="container container--fluid">
+
+            <ul class="main-nav__list site-list">
+
+                <% const siteList = [
+                    {text: "Haircare", link: "#"},
+                    {text: "Color", link: "#"},
+                    {text: "Styling", link: "#"},
+                    {text: "Texture", link: "#"},
+                    {text: "Get Inspired", link: "#"},
+                    {text: "Social", link: "#"},
+                    {text: "News", link: "#"},
+                    {text: "About", link: "#"},
+                    {text: "Professional", link: "#"}
+                ]
+                %>
+
+                <% siteList.forEach(function(item, index) { %>
+                <li class="site-list__item">
+                    <% if(index == siteList.length - 1) { %>
+
+                    <p class="site-list__item-link--active"><%= item.text; %></p>
+                    <% } %>
+                    <% if(index < siteList.length - 1) { %>
+
+                    <a class="site-list__item-link" href="<%= item.link; %>"><%= item.text; %></a>
+                    <% } %>
+                </li>
+
+                <% }); %>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+        <a href="/" class="logo page-header__logo"><%-include('img/logo.svg')%></a>
+
+
+
+
+        <div class="page-header__nearest">
+            <p class="page-header__nearest--salon">Nearest Salon</p>
+            <p class="page-header__nearest--title">Plush Salon 92101</p>
+        </div>
+
+
+
+        <form class="page-header__search search" action="#" method="get">
+            <label>
+                <input class="search__search-field" type="search" size="10" name="form-user-info">
+            </label>
+            <input class="search__search-button" type="submit" value="Искать">
+        </form>
+
+</header>
+
+    <main class="page-main">
+        <div class="container container--for-breadcrumbs">
+            <ul class="page-main__breadcrumbs breadcrumbs">
+
+                <% const breadcrumbs = [
+                    {text: "Home", link: "#"},
+                    {text: "Videos", link: "#"},
+                ]
+                %>
+
+                <% breadcrumbs.forEach(function(crumb, index) { %>
+                <li class="breadcrumbs__item">
+                    <% if(index == breadcrumbs.length - 1) { %>
+
+                    <%= crumb.text; %>
+                    <% } %>
+                    <% if(index < (breadcrumbs.length - 1)) { %>
+                    <a href="#" class="breadcrumbs__link"><%= crumb.text; %></a>
+
+                    <span class="breadcrumbs__separator">/</span>
+                    <% } %>
+                </li>
+                <% }); %>
+            </ul>
+        </div>
+        <div class="container">
+            <section class="page-main__videos videos">
+                <h1 class="page-title">Videos</h1>
+                <div class="videos__top-video">
+                    <figure class="videos__video-preview">
+                        <a data-fancybox href="https://youtu.be/z8M0Fa1JVco">
+                            <img class="videos__top-video-link" src="https://img.youtube.com/vi/z8M0Fa1JVco/maxresdefault.jpg">
+                    <img class="videos__play" src="img/play.png">
+                        </a>
+                    </figure>
+                    <p class="videos__top-video-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda autem beatae commodi culpa, deserunt error est excepturi incidunt ipsum molestiae, neque tenetur ut.</p>
+                </div>
+                <div class="videos__category">
+                    <h2 class="videos__category-title">
+                        Step <span class="videos__text-allocator">by</span> step
+                    </h2>
+                    <div data-slick class="videos__category-wrapper slider">
+
+                        <% const videosStepByStep = [
+                            {link: "z8M0Fa1JVco"},
+                            {link: "Wi2KcdoCuo4"},
+                            {link: "DG4FAU5qmMY"},
+                            {link: "PZjGrmHdFME"},
+                            {link: "_wLGr24VeoI"},
+                            {link: "DG4FAU5qmMY"}
                         ]
                         %>
-                        <% siteList.forEach(function(item, index) { %>
-                        <li class="site-list__item">
-                            <% if(index == 0) { %>
+                        <% videosStepByStep.forEach(function(item, index) { %>
+                        <div class="videos__in-category" id="sliderStepByStep">
 
-                            <%= item.text; %>
+                            <% if(index > 2) { %>
+                           <a data-fancybox href="https://youtu.be/<%= item.link; %>">
+                                <img  class="videos__in-category-link js-hidden-step-by-step" src="https://img.youtube.com/vi/<%= item.link; %>/maxresdefault.jpg">
+                                <img class="videos__play videos__play--in-category js-hidden-step-by-step" src="img/play.png">
+                            </a>
+                            <% } else {%>
+                           <a data-fancybox="gallery" href="https://youtu.be/z8M0Fa1JVco">
+                                <img  class="videos__in-category-link" src="https://img.youtube.com/vi/<%= item.link; %>/maxresdefault.jpg">
+                                <img class="videos__play videos__play--in-category" src="img/play.png">
+                            </a>
                             <% } %>
-                            <% if(index > 0) { %>
 
-                            <a class="site-list__item-link" href="<%= item.link; %>"><%= item.text; %></a>
+                        </div>
+                            <% }) %>
+                   </div>
+
+
+                    <button class="videos__more button js-load-step-by-step" type="button">Load more</button>
+                </div>
+
+                <div class="videos__category">
+                    <h2 class="videos__category-title">
+                        Craft <span class="videos__text-allocator">education</span>
+                    </h2>
+                    <div class="videos__category-wrapper slider">
+
+                        <% const videosCraftEducation = [
+                            {link: "RmNWNLXmswk"},
+                            {link: "-tztXOz8Vc0"},
+                            {link: "kUfIVtyydgQ"},
+                            {link: "-tztXOz8Vc0"}
+                        ]
+                        %>
+                        <% videosCraftEducation.forEach(function(item, index) { %>
+                        <div class="videos__in-category">
+
+                            <% if(index > 2) { %>
+                            <a data-fancybox href="https://youtu.be/<%= item.link; %>">
+                                <img  class="videos__in-category-link js-hidden-craft-education" src="https://img.youtube.com/vi/<%= item.link; %>/maxresdefault.jpg">
+                                <img class="videos__play videos__play--in-category js-hidden-craft-education" src="img/play.png">
+                            </a>
+                            <% } else {%>
+                            <a data-fancybox href="https://youtu.be/<%= item.link; %>">
+                                <img  class="videos__in-category-link" src="https://img.youtube.com/vi/<%= item.link; %>/maxresdefault.jpg">
+                                <img class="videos__play videos__play--in-category" src="img/play.png">
+                            </a>
                             <% } %>
-                        </li>
 
-                        <% }); %>
+                        </div>
+                        <% }) %>
+                    </div>
+                    <button class="videos__more button js-load-craft-education" type="button">Load more</button>
+                </div>
+                <div class="videos__category">
+                    <h2 class="videos__category-title">
+                        Inspiration
+                    </h2>
+                    <div class="videos__category-wrapper slider">
 
+                        <% const videosInspiration = [
+                            {link: "VmmwwzR536g"},
+                            {link: "DG4FAU5qmMY"},
+                            {link: "6oPBFnsqJW8"},
+                            {link: "DG4FAU5qmMY"}
+                        ]
+                        %>
+                        <% videosInspiration.forEach(function(item, index) { %>
+                        <div class="videos__in-category">
 
+                            <% if(index > 2) { %>
+                            <a data-fancybox href="https://youtu.be/<%= item.link; %>">
+                                <img  class="videos__in-category-link js-hidden-inspiration" src="https://img.youtube.com/vi/<%= item.link; %>/maxresdefault.jpg">
+                                <img class="videos__play videos__play--in-category js-hidden-inspiration" src="img/play.png">
+                            </a>
+                            <% } else {%>
+                            <a data-fancybox href="https://youtu.be/<%= item.link; %>">
+                                <img  class="videos__in-category-link" src="https://img.youtube.com/vi/<%= item.link; %>/maxresdefault.jpg">
+                                <img class="videos__play videos__play--in-category" src="img/play.png">
+                            </a>
+                            <% } %>
 
-                    </ul>
-                </nav>
-                <form class="page-header__search search" action="#" method="get">
-                    <label>
-              <input class="search__search-field" type="search" size="32" name="form-user-info">
-            </label>
-                    <input class="search__search-button" type="submit" value="Искать">
-                </form>
-            </div>
+                        </div>
+                        <% }) %>
+                    </div>
+                    <button class="videos__more button js-load-inspiration" type="button">Load more</button>
+
+                </div>
+            </section>
         </div>
-    </header>
-    <main class="page-main">
-        <ul class="page-main__breadcrumbs breadcrumbs">
+    </main>
 
-            <% const breadcrumbs = [
-                {text: "LISP", link: "#"},
-                {text: "Одежда", link: "#"},
-                {text: "Футболки", link: "#"}
+    <footer class="page-footer">
+        <section class="page-footer__section social-links">
+
+            <% const footerSocialLinks = [
+                {SocialNetwork: "facebook", link: "#", text: "Fb"},
+                {SocialNetwork: "twitter", link: "#", text: "Twit"},
+                {SocialNetwork: "pinterest", link: "#", text: "Pin"},
+                {SocialNetwork: "youtube", link: "#", text: "Youtube"},
+                {SocialNetwork: "instagram", link: "#", text: "Inst"}
             ]
             %>
-
-            <% breadcrumbs.forEach(function(crumb, index) { %>
-            <li class="breadcrumbs__item">
-                <% if(index == breadcrumbs.length - 1) { %>
-
-                <%= crumb.text; %>
-                <% } %>
-                <% if(index < (breadcrumbs.length - 1)) { %>
-                <a href="#" class="breadcrumbs__link"><%= crumb.text; %></a>
-
-                <span class="breadcrumbs__separator">/</span>
-                <% } %>
-            </li>
+            <% footerSocialLinks.forEach(function(item, index) { %>
+            <a href="<%= item.link; %>" class="social-links__social-button social-links__social-button--<%= item.SocialNetwork; %>">
+                <span class="visually-hidden">
+                <%= item.text; %>
+                </span>
+            </a>
             <% }); %>
-        </ul>
-        <section class="page-main__product">
-            <figure class="product-figure">
-                <img class="product-figure__img" src="img/tshirt_white.jpg" alt="picture" width="698" height="698" id="productImage">
-            </figure>
-            <div class="page-main__product-info product-info">
-                <h1 class="product-info__title">Футболка Alien technology</h1>
-                <p class="product-info__description">Состав: 100% хлопок, динамическая типизация, польская нотация. Производство: Россия.</p>
-                <p class="product-info__price">1500&#8381;</p>
-                <form class="page-main__product-form" action="#" method="post">
-                    <fieldset class="page-main__product-parameters">
-                        <p class="page-main__product-parameter-title">Размер</p>
 
-                        <% const sizeButton = [
-                            {size: "s", text: "S"},
-                            {size: "m", text: "M"},
-                            {size: "l", text: "L"}
-                        ]
-                        %>
-                        <% sizeButton.forEach(function(size, index) { %>
-                        <input class="page-main__product-radio page-main__product-radio--size-<%= size.size; %>" type="radio" name="size" value="<%= size.size; %>" id="size-radio-<%= size.size; %>">
-                        <label for="size-radio-<%= size.size; %>"><%= size.text; %></label>
-                        <% }); %>
-
-                    </fieldset>
-                    <fieldset class="page-main__product-parameters">
-                        <p class="page-main__product-parameter-title">Цвет</p>
-
-                        <% const colorButton = [
-                            {color: "white", text: "W"},
-                            {color: "yellow", text: "Y"},
-                            {color: "green", text: "G"}
-                            ]
-                        %>
-                        <% colorButton.forEach(function(color, index) { %>
-                        <input class="page-main__product-radio page-main__product-radio--color-<%= color.color; %>" type="radio" name="color" value="<%= color.color; %>" id="color-radio-<%= color.color; %>">
-                        <label for="color-radio-<%= color.color; %>"><%= color.text; %></label>
-                        <% }); %>
-
-                    </fieldset>
-                    <input class="button page-main__button-buy" type="submit" value="Купить">
-                    <input class="add-to-wishlist" type="submit" value="Отложить на потом">
-                </form>
-            </div>
         </section>
-    </main>
-    <footer class="page-footer">
-        <div class="container">
-            <div class="page-footer__top">
-                <section class="page-footer__section">
-                    <h5 class="page-footer__section-title">Сервис и поддержка</h5>
-                    <ul class="page-footer__list footer-links">
+        <section class="page-footer__section user-settings">
+            <form class="user-settings__form" action="#" method="post">
+                <p class="user-settings__setting-name">Location:</p>
+                <select  class="user-settings__setting-field">
 
-                        <% const footerlistServices = [
-                            {text: "Как сделать заказ", link: "#"},
-                            {text: "Возврат товара", link: "#"},
-                            {text: "Публичная оферта", link: "#"},
-                            {text: "Доставка", link: "#"},
-                            {text: "Способы оплаты", link: "#"},
-                            {text: "Правила продажи", link: "#"},
-                            {text: "Возврат денежных средств", link: "#"},
-                            {text: "Вопросы и ответы", link: "#"}
-                            ]
-                        %>
-                        <% footerlistServices.forEach(function(item, index) { %>
-                        <li class="footer-links__item">
-                            <a class="footer-links__item-link" href="<%= item.link; %>"><%= item.text; %></a>
-                        </li>
-
-                        <% }); %>
-                    </ul>
-                </section>
-                <section class="page-footer__section">
-                    <h5 class="page-footer__section-title">О компании</h5>
-                    <ul class="page-footer__list  footer-links">
-
-
-                        <% const footerlistAbout = [
-                            {text: "О нас", link: "#"},
-                            {text: "Контакты", link: "#"},
-                            {text: "Вакансии", link: "#"},
-                            {text: "Партнерам", link: "#"},
-                            {text: "Сертификаты", link: "#"},
-                            {text: "Преимущества", link: "#"},
-                            {text: "Наши скидки", link: "#"}
-                            ]
-                        %>
-                        <% footerlistAbout.forEach(function(item, index) { %>
-                        <li class="footer-links__item">
-                            <a class="footer-links__item-link" href="<%= item.link; %>"><%= item.text; %></a>
-                        </li>
-
-                        <% }); %>
-
-                    </ul>
-                </section>
-                <section class="page-footer__features">
-                    <ul class="page-footer__features-list features-list">
-                        <% const footerlistFeatures = [
-                            {feauture: "delivery", text: "бесплатная доставка от 4000Р"},
-                            {feauture: "probe", text: "пробники в подарок при каждой покупке"},
-                            {feauture: "actions", text: "акции и подарки за покупку"},
-                        ]
-                        %>
-                        <% footerlistFeatures.forEach(function(item, index) { %>
-                        <li class="features-list__item features-list__item--<%= item.feauture; %>">
-                            <%= item.text; %>
-                        </li>
-                        <% }); %>
-                    </ul>
-                </section>
-                <section class="page-footer__social-links social-links">
-
-                    <% const footerSocialLinks = [
-                        {SocialNetwork: "facebook", link: "#", text: "Fb"},
-                        {SocialNetwork: "twitter", link: "#", text: "Twit"},
-                        {SocialNetwork: "instagram", link: "#", text: "Inst"},
+                    <% const country = [
+                        {value: "United States"},
+                        {value: "Spain"},
+                        {value: "Russia"}
                     ]
                     %>
-                    <% footerSocialLinks.forEach(function(item, index) { %>
-                    <a href="<%= item.link; %>" class="social-links__social-button social-links__social-button--<%= item.SocialNetwork; %>">
-                        <%= item.text; %>
-                    </a>
+                    <% country.forEach(function(item, index) { %>
+                    <option class="user-settings__setting-falue"  value="<%= item.value; %>">
+                        <%= item.value; %>
+                    </option>
+
                     <% }); %>
 
-                </section>
-            </div>
-            <div class="page-footer__bottom">
-                <p class="page-footer__copyright">2005-2017 &copy; 7h35h0p.ru - модный интернет-магазин одежды, обуви и аксессуаров. <br> Все права защищены. Доставка по всей России!</p>
-            </div>
-        </div>
+                </select>
+            </form>
+            <form class="user-settings__form" action="#" method="post">
+                <p class="user-settings__setting-name">Language:</p>
+                <select class="user-settings__setting-field">
+
+                    <% const language = [
+                        {value: "English"},
+                        {value: "Spanis"},
+                        {value: "Russian"}
+                    ]
+                    %>
+                    <% language.forEach(function(item, index) { %>
+                    <option class="user-settings__setting-falue"  value="<%= item.value; %>">
+                        <%= item.value; %>
+                    </option>
+
+                    <% }); %>
+
+                </select>
+            </form>
+        </section>
+        <section class="page-footer__section useful-links">
+
+            <ul class="useful-links__list  useful-links">
+
+
+                <% const footerUsefulLinks = [
+                    {text: "Privacy Policy", link: "#"},
+                    {text: "Terms of use", link: "#"},
+                    {text: "Contact us", link: "#"},
+                    {text: "Newsletter", link: "#"},
+                    {text: "Sitemap", link: "#"}
+                ]
+                %>
+                <% footerUsefulLinks.forEach(function(item, index) { %>
+                <li class="useful-links__item">
+                    <a class="useful-links__item-link" href="<%= item.link; %>"><%= item.text; %></a>
+                </li>
+
+                <% }); %>
+
+            </ul>
+
+        </section>
     </footer>
 
-    <script src="js/checkColor.js"></script>
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.1/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        $('.slider').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            focusOnSelect: true,
+            autoplay: false,
+            arrows: true,
+            responsive: [
+                {
+                    breakpoint: 1141,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+
+                {
+                    breakpoint: 767,
+                    settings: "unslick"
+                }
+                ]
+        });
+        $(window).resize(function() {
+            $('.slider').slick('resize');
+        });
+
+        $(window).on('orientationchange', function() {
+            $('.slider').slick('resize');
+        });
+
+
+
+    });
+</script>
+<script src="js/navigationToogle.js"></script>
+<script src="js/loadMore.js"></script>
+
 
 </body>
-
 </html>
