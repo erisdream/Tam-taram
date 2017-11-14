@@ -1,26 +1,48 @@
 .search {
-    border: none;
-    float: right;
 
     &__search-field {
-        padding: 11px 0;
-        border: 1px solid @dark-grey;
+        padding: 5px 0 0;
+        color: white;
         border-right: 0;
         box-shadow: none;
+        background-color: @dark-grey;
+        border: none;
+
+        &:active {
+            background-color: white;
+            color: black;
+        }
+
+        &:focus {
+            background-color: white;
+            color: black;
+        }
+
+
+        @media @tablet {
+            background-color: @purple;
+        }
     }
 
     &__search-button {
         cursor: pointer;
-        border: 1px solid @dark-grey;
-        border-left: 0;
-        background-color: @bg-white;
+        background-color: @dark-grey;
+        border: none;
         width: 43px;
         font-size: 0;
         margin-left: -5px;
-        padding: 23px 0 14px;
-        background-image: url("../img/search.svg");
-        background-size: 40%;
+        padding: 23px 0 12px;
+        background-image: url("../../img/ico_search.svg");
+        background-size: 50%;
         background-repeat: no-repeat;
         background-position: 18px 8px;
+
+        @media @tablet {
+            background-color: @purple;
+        }
+
+        @media @desktop {
+            background-size: 46%;
+        }
     }
 }

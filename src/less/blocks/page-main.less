@@ -1,83 +1,25 @@
 .page-main {
-    .container ();
-    padding-bottom: 115px;
+    padding: 16px 0 0;
+
+    @media @tablet {
+        max-width: 992px;
+        margin: 0 auto;
+        padding-top: 40px;
+    }
+
+    @media @desktop {
+        max-width: 1440px;
+        margin-bottom: 130px;
+    }
 
     &__breadcrumbs {
-        padding: 0 0 20px 0;
-    }
-
-    &__product {
-        display: flex;
-        justify-content: flex-start;
-    }
-
-    &__product-info {
-        padding-left: 67px;
-    }
-
-    &__product-form {
-        margin-top: -12px;
-    }
-
-    &__product-parameters {
-        color: @black;
-        border: 0;
+        padding: 0;
         margin: 0;
-        padding: 0 0 24px 0;
-        font-size: 36px;
     }
 
-    &__product-parameter-title {
-        color: @black;
-        font-size: 16px;
-        line-height: 6px;
-        padding-bottom: 0;
-    }
-
-    &__product-radio:not(checked) {
-        position: absolute;
-        opacity: 0;
-    }
-
-    &__product-radio:not(checked) + label {
-        display: inline-block;
-        position: relative;
-        margin: 4px 3px 3px 0;
-        cursor: pointer;
-        border: 1px solid @black;
-        height: 62px;
-        width: 62px;
-        line-height: 62px;
-        text-align: center;
-    }
-
-    &__product-radio--color-white:not(checked) + label {
-        background-color: white;
-        color: white;
-    }
-
-    &__product-radio--color-yellow:not(checked) + label {
-        background-color: @yellow;
-        color: @yellow;
-    }
-
-    &__product-radio--color-green:not(checked) + label {
-        background-color: @green;
-        color: @green;
-    }
-
-    &__product-radio:checked + label {
-        border: 3px solid @red;
-        margin-top: -2px;
-        height: 58px;
-        width: 58px;
-        line-height: 58px;
-        text-align: center;
-    }
-
-    &__button-buy {
-        margin: 17px 0 38px;
-        font-size: 29px;
-        cursor: pointer;
+    &__videos {
+        padding: 0;
+        margin: 0;
     }
 }
+

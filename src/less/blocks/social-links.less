@@ -1,22 +1,36 @@
 .social-links {
-    width: 30px;
-    margin-left: 90px;
+    display: flex;
+    justify-content: space-between;
+    width: 175px;
+
+    @media @tablet {
+        order: 1;
+        padding-top: 5px;
+    }
 
     &__social-button {
-        font-size: 0;
-        height: 30px;
-        margin: 21px 0 1px;
+        display: block;
+        width: 20px;
+        height: 20px;
 
         &--facebook {
-            background: url("../img/facebook.svg") 5px 0 no-repeat;
+            background: url("../img/ico_facebook.svg") no-repeat;
         }
 
         &--twitter {
-            background: url("../img/twitter.svg") 0 3px no-repeat;
+            background: url("../img/ico_twitter.svg") no-repeat;
+        }
+
+        &--pinterest {
+            background: url("../img/ico_pinterest.svg") no-repeat;
+        }
+
+        &--youtube {
+            background: url("../img/ico_youtube.svg") no-repeat;
         }
 
         &--instagram {
-            background: url("../img/instagram.svg") no-repeat;
+            background: url("../img/ico_instagram.svg") no-repeat;
         }
     }
 }

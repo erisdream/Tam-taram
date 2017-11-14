@@ -1,0 +1,27 @@
+.useful-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    width: 275px;
+
+    @media @tablet {
+        width: 230px;
+        font-size: 11px;
+        line-height: 13px;
+        align-self: flex-start;
+    }
+
+    @media @desktop {
+        order: 0;
+        line-height: 18px;
+    }
+
+    &__item-link {
+        color: @light-grey;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding-right: 10px;
+    }
+}

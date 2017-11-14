@@ -1,49 +1,84 @@
 .page-header {
-    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 320px;
     margin: 0 auto;
-    background-color: @bg-white;
-    margin-bottom: 48px;
+    background-color: @dark-grey;
 
-    &__top {
-        .container ();
-        display: flex;
-        justify-content: space-between;
-        padding-top: 18px;
-        background-color: @bg-white;
-        margin-bottom: -3px;
+
+    @media @tablet {
+        background-color: @purple;
+        padding: 13px 0 0;
     }
 
-    &__page-name {
-        padding: 13px 0 0 3px;
-        font-size: 22px;
-        font-weight: 700;
-        text-decoration: none;
-        color: @red;
-        letter-spacing: 2px;
+    @media @desktop {
+        padding-top: 6px;
     }
 
-    &__oggetto-link {
-        padding: 0 0 20px 6px;
-    }
+    &__logo {
 
-    &__phone {
-        padding-top: 12px;
-        font-size: 24px;
-        font-weight: 700;
-        text-decoration: none;
-        color: @red;
-    }
+        @media @tablet {
+            order: -5;
+            padding: 10px 0 19px 5px;
+        }
 
-    &__menu {
-        padding: 7px 0 5px 6px;
-        background-color: @bg-grey;
-        height: 40px;
-        border-top: 1px solid @dark-grey;
-        border-bottom: 1px solid @dark-grey;
-        padding-bottom: 3px;
+        @media @desktop {
+            padding-bottom: 15px;
+        }
     }
 
     &__search {
-        padding: 0;
+        padding: 6px 14px 10px 0;
+
+        @media @tablet {
+            order: -1;
+            background-color: @purple;
+            padding-right: 26px;
+            padding-bottom: 15px;
+        }
+
+        @media @desktop {
+            padding-top: 1px;
+        }
+    }
+
+    &__nearest {
+        background-color: @dark-grey;
+        color: white;
+        line-height: 7px;
+        letter-spacing: .1px;
+        font-weight: 700;
+        font-size: 12px;
+        padding-left: 20px;
+
+        @media @tablet {
+            order: -10;
+            background-color: @purple;
+            padding-left: 26px;
+        }
+
+        @media @desktop {
+            font-size: 11px;
+            line-height: 3px;
+        }
+
+        &--salon {
+            text-transform: uppercase;
+        }
+
+        &--title {
+            text-transform: none;
+        }
+    }
+
+    @media @tablet {
+        width: 100%;
+    }
+
+    @media @desktop {
+        max-width: 1440px;
     }
 }
+
+

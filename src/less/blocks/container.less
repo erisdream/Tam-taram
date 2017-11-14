@@ -1,3 +1,39 @@
 .container {
-    .container ();
+    padding: 0 10px;
+    width: 300px;
+    margin: 0 auto;
+
+    @media @tablet {
+        width: 669px;
+    }
+
+    @media @desktop {
+        width: 100%;
+        max-width: 960px;
+    }
+
+    &--fluid {
+
+        @media @tablet {
+            width: auto;
+            padding: 0 20px;
+        }
+
+        @media @desktop {
+            width: 960px;
+            padding: 0 10px;
+        }
+    }
+
+    &--for-breadcrumbs {
+
+        @media @desktop {
+            width: auto;
+            padding: 0 10px;
+            margin-top: -28px;
+            margin-bottom: 38px;
+        }
+    }
 }
+
+

@@ -1,0 +1,239 @@
+.videos {
+    padding: 0;
+    margin: 0;
+
+    &__top-video {
+        padding: 0;
+        margin: 0;
+        position: relative;
+    }
+
+    &__top-video-description {
+        padding: 0 0 8px 5px;
+        margin: 0;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+        border-bottom: 2px solid #686868;
+
+        @media @tablet {
+            font-size: 30px;
+            line-height: 37px;
+            padding-bottom: 12px;
+            margin-bottom: 52px;
+        }
+
+        @media @desktop {
+            padding-bottom: 22px;
+            margin-bottom: 64px;
+        }
+    }
+
+    &__top-video-link {
+        padding: 0;
+        width: 300px;
+
+        @media @tablet {
+            width: 669px;
+        }
+
+        @media @desktop {
+            width: 1142px;
+        }
+    }
+
+    &__video-preview {
+        padding: 0;
+        height: 153px;
+        margin: 0 0 14px;
+        overflow: hidden;
+
+        @media @tablet {
+            height: 344px;
+            margin: 0 0 40px;
+        }
+
+        @media @desktop {
+            height: 494px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+    }
+
+    &__play {
+        position: absolute;
+        left: 125px;
+        top: 48px;
+        width: 18%;
+
+        @media @tablet {
+            left: 295px;
+            top: 120px;
+        }
+
+        @media @desktop {
+            left: 420px;
+            top: 165px;
+        }
+
+        &--in-category {
+            top: 46px;
+            left: 135px;
+            width: 24%;
+
+            @media @tablet {
+                left: 117px;
+                top: 45px;
+            }
+        }
+    }
+
+    &__category {
+        padding: 0;
+        margin: 0;
+    }
+
+    &__category-title {
+        text-transform: uppercase;
+        font-size: 30px;
+        font-stretch: ultra-condensed;
+        letter-spacing: .1px;
+        padding: 47px 0 0;
+        line-height: 0;
+
+        @media @tablet {
+            padding-left: 30px;
+            font-size: 30px;
+        }
+
+        @media @desktop {
+            font-size: 48px;
+            margin-bottom: 30px;
+            padding-left: 0;
+            padding-top: 44px;
+        }
+    }
+
+    &__text-allocator {
+        color: @red;
+    }
+
+    &__category-wrapper {
+        padding-left: 0;
+        margin: 0;
+
+        @media @tablet {
+            display: block;
+            padding-left: 20px;
+            margin-bottom: 50px;
+        }
+
+        @media @desktop {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    &__in-category {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+
+        @media @desktop {
+            padding: 0 5px;
+        }
+    }
+
+    &__in-category-link {
+        width: 310px;
+        height: 180px;
+        margin-bottom: 45px;
+
+        @media @tablet {
+            width: 310px;
+            margin-bottom: 0;
+        }
+
+        @media @desktop {
+            width: 311px;
+        }
+    }
+
+    &__more {
+        background-color: #252525;
+        font-size: 14px;
+        line-height: 25px;
+        color: white;
+        margin: -30px 0 25px 80px;
+        text-transform: uppercase;
+
+        @media @tablet {
+            display: none;
+        }
+    }
+}
+
+.slick-next {
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 15px;
+        width: 13px;
+        height: 13px;
+        background-color: white;
+        border-top: 7px solid black;
+        border-right: 7px solid black;
+        cursor: pointer;
+        opacity: 1;
+        transform: rotate(45deg);
+
+        @media @tablet {
+            top: 0;
+            right: 0;
+        }
+
+        @media @desktop {
+            top: 0;
+            right: -30px;
+        }
+    }
+
+    &:active::after {
+        border-color: @light-grey;
+    }
+
+
+}
+
+.slick-prev {
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 13px;
+        height: 13px;
+        background-color: white;
+        border-bottom: 7px solid black;
+        border-left: 7px solid black;
+        cursor: pointer;
+        opacity: 1;
+        transform: rotate(45deg);
+
+        @media @tablet {
+            top: 0;
+            right: -10px
+        }
+
+        @media @desktop {
+            top: 0;
+            right: 40px;
+        }
+    }
+
+    &:active::after {
+        border-color: @light-grey;
+    }
+}
